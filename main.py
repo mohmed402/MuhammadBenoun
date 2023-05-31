@@ -102,7 +102,7 @@ def add_data_to_table(table, person_ID, booking_date, return_date, amount_to_be_
     connection = sqlite3.connect("BouncyCastle.db")
     cursor = connection.cursor()
     if table == "1":
-        query = "INSERT INTO Booking(Person_ID, BookingDate, ReturnDate, AmountToBePaid, PaymentType_ID, BouncyCastle_ID) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        query = "INSERT INTO Booking(Person_ID, BookingDate, ReturnDate, AmountToBePaid, PaymentType_ID, employee_ID,BouncyCastle_ID) VALUES (?, ?, ?, ?, ?, ?, ?)"
         cursor.execute(query, (person_ID, booking_date, return_date,
                        amount_to_be_paid, payment_type_ID, employee_ID, bouncy_castle_ID))
         connection.commit()
